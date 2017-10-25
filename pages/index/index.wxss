@@ -1,0 +1,27 @@
+.panel {
+    margin: 26px 0;
+    background: #fff;
+    border-top: 1rpx solid #c8c7cc;
+    border-bottom: 1rpx solid #c8c7cc;
+    padding-left: 15px;
+}
+.cell {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1rpx solid #c8c7cc;
+}
+.cell:last-child {
+    border-bottom: none;
+}
+.cell__title {
+    color: #000;
+    flex: 1;
+}
+.cell__value {
+    color: #cbcbcd;
+    padding-right: 15px;
+    flex: 2;
+    text-align: right;
+}

@@ -1,0 +1,6 @@
+.container {
+    min-height: 100vh;
+    background: #efeff4;
+    overflow: hidden;
+    font-family: Helvetica,STHeiti STXihei,Microsoft YaHei,Tohoma,Arial;
+}
