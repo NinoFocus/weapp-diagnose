@@ -1,11 +1,11 @@
 <view class="container">
-  <view class="panel">
+  <view wx:if="{{ networkType }}" class="panel">
     <view class="cell">
       <view class="cell__title">网络</view>
       <view class="cell__value">{{ networkType }}</view>
     </view>
   </view>
-  <view class="panel">
+  <view wx:if="{{ systemInfo }}" class="panel">
     <view class="cell">
       <view class="cell__title">客户端平台</view>
       <view class="cell__value">{{ systemInfo.platform }}</view>
@@ -30,5 +30,8 @@
       <view class="cell__title">手机型号</view>
       <view class="cell__value">{{ systemInfo.model }}</view>
     </view>
+  </view>
+  <view wx:if="{{ networkType && systemInfo }}" class="copy-btn">
+    <button type="primary" bindtap="handleCopy">复制信息</button>
   </view>
 </view>
