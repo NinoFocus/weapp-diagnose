@@ -10,8 +10,11 @@ Page({
   },
 
   getSystemInfo() {
-    let systemInfo = wx.getSystemInfoSync()
-    this.setData({ systemInfo })
+    wx.getSystemInfo({
+      success: (systemInfo) => {
+        this.setData({ systemInfo })
+      }
+    })
   },
 
   getNetworkType() {
