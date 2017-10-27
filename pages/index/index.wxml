@@ -1,37 +1,37 @@
 <view class="container">
-  <view wx:if="{{ networkType }}" class="panel">
+  <view class="panel">
     <view class="cell">
       <view class="cell__title">网络</view>
-      <view class="cell__value">{{ networkType }}</view>
+      <view class="cell__value">{{ !networkTypeLoaded ? '...' : networkType }}</view>
     </view>
   </view>
-  <view wx:if="{{ systemInfo }}" class="panel">
+  <view class="panel">
     <view class="cell">
       <view class="cell__title">客户端平台</view>
-      <view class="cell__value">{{ systemInfo.platform }}</view>
+      <view class="cell__value">{{ !systemInfoLoaded ? '...' : systemInfo.platform }}</view>
     </view>
     <view class="cell">
       <view class="cell__title">操作系统版本</view>
-      <view class="cell__value">{{ systemInfo.system }}</view>
+      <view class="cell__value">{{ !systemInfoLoaded ? '...' : systemInfo.system }}</view>
     </view>
     <view class="cell">
       <view class="cell__title">微信版本号</view>
-      <view class="cell__value">{{ systemInfo.version }}</view>
+      <view class="cell__value">{{ !systemInfoLoaded ? '...' : systemInfo.version }}</view>
     </view>
     <view class="cell">
       <view class="cell__title">客户端基础库版本</view>
-      <view class="cell__value">{{ systemInfo.SDKVersion }}</view>
+      <view class="cell__value">{{ !systemInfoLoaded ? '...' : systemInfo.SDKVersion }}</view>
     </view>
     <view class="cell">
       <view class="cell__title">手机品牌</view>
-      <view class="cell__value">{{ systemInfo.brand }}</view>
+      <view class="cell__value">{{ !systemInfoLoaded ? '...' : systemInfo.brand }}</view>
     </view>
     <view class="cell">
       <view class="cell__title">手机型号</view>
-      <view class="cell__value">{{ systemInfo.model }}</view>
+      <view class="cell__value">{{ !systemInfoLoaded ? '...' : systemInfo.model }}</view>
     </view>
   </view>
-  <view wx:if="{{ networkType && systemInfo }}" class="copy-btn">
+  <view wx:if="{{ networkTypeLoaded && systemInfoLoaded }}" class="copy-btn">
     <button type="primary" bindtap="handleCopy">复制信息</button>
   </view>
 </view>

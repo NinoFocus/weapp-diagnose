@@ -1,10 +1,12 @@
 Page({
   data: {
     systemInfo: null,
-    networkType: ''
+    networkType: '',
+    systemInfoLoaded: false,
+    networkTypeLoaded: false
   },
 
-  onLoad: function () {
+  onShow() {
     this.getSystemInfo()
     this.getNetworkType()
   },
@@ -12,7 +14,10 @@ Page({
   getSystemInfo() {
     wx.getSystemInfo({
       success: (systemInfo) => {
-        this.setData({ systemInfo })
+        this.setData({
+          systemInfo,
+          systemInfoLoaded: true
+       })
       }
     })
   },
@@ -21,7 +26,8 @@ Page({
     wx.getNetworkType({
       success: (res) => {
         this.setData({
-          networkType: res.networkType
+          networkType: res.networkType,
+          networkTypeLoaded: true
         })
       }
     })
